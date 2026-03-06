@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Механика платформасы — Мұғалім панелі</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="topbar">
+      <div>
+        <h1>Мұғалім панелі</h1>
+        <p>Механика пәні бойынша 15 апталық онлайн курс</p>
+      </div>
+    </header>
+
+    <section class="stats">
+      <div class="card">
+        <h3>Барлық студент</h3>
+        <p id="totalStudents">0</p>
+      </div>
+      <div class="card">
+        <h3>Орташа балл</h3>
+        <p id="avgScore">0</p>
+      </div>
+      <div class="card">
+        <h3>Курс ұзақтығы</h3>
+        <p>15 апта</p>
+      </div>
+      <div class="card">
+        <h3>Сертификат саны</h3>
+        <p id="certificateCount">0</p>
+      </div>
+    </section>
+
+    <section class="toolbar">
+      <input type="text" id="searchInput" placeholder="Студентті іздеу..." />
+
+      <select id="groupFilter">
+        <option value="Барлығы">Барлығы</option>
+      </select>
+
+      <select id="statusFilter">
+        <option value="Барлығы">Барлығы</option>
+        <option value="Өте жақсы">Өте жақсы</option>
+        <option value="Жақсы">Жақсы</option>
+        <option value="Орташа">Орташа</option>
+        <option value="Төмен">Төмен</option>
+      </select>
+    </section>
+
+    <section class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Аты-жөні</th>
+            <th>Тобы</th>
+            <th>Өткен апта</th>
+            <th>Прогресс</th>
+            <th>Балл</th>
+            <th>Статус</th>
+            <th>Кері байланыс</th>
+            <th>Сертификат</th>
+          </tr>
+        </thead>
+        <tbody id="studentTableBody"></tbody>
+      </table>
+    </section>
+  </div>
+
+  <!-- Сертификат терезесі -->
+  <div class="modal hidden" id="certificateModal">
+    <div class="modal-content">
+      <div class="certificate" id="certificateContent">
+        <div class="certificate-inner">
+          <p class="platform-name">Онлайн оқу платформасы</p>
+
+          <h2>СЕРТИФИКАТ</h2>
+
+          <p class="certificate-subtitle">
+            Осы сертификат төмендегі білім алушыға беріледі
+          </p>
+
+          <h3 id="certStudentName">Студент аты</h3>
+
+          <p class="certificate-text" id="certificateText">
+            «Механика» пәні бойынша онлайн курсқа қатысқаны үшін беріледі.
+          </p>
+
+          <div class="certificate-info">
+            <div class="info-box">
+              <span>Тобы</span>
+              <strong id="certGroup">Мех-101</strong>
+            </div>
+
+            <div class="info-box">
+              <span>Жалпы балл</span>
+              <strong id="certScore">90 балл</strong>
+            </div>
+
+            <div class="info-box">
+              <span>Өткен апта</span>
+              <strong id="certWeeks">10/15</strong>
+            </div>
+          </div>
+
+          <div class="certificate-bottom">
+            <div class="sign-box">
+              <span>Күні</span>
+              <strong id="certDate"></strong>
+            </div>
+
+            <div class="sign-box">
+              <span>Оқытушы</span>
+              <strong>Пән оқытушысы</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-actions no-print">
+        <button class="btn gray" id="closeModalBtn">Жабу</button>
+        <button class="btn green" id="downloadPdfBtn">PDF сертификат</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
